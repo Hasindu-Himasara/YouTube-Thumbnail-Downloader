@@ -6,20 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-START_TEXT = """Hello {},
-I am a simple youtube thumbnail downloader telegram bot.
-
-- Send a youtube video link or video ID.
-- I will send the thumbnail.
-- You can also send youtube video link or video id with quality. ( like :- `rokGy0huYEA | sd`
-  - sd - Standard Quality
-  - mq - Medium Quality
-  - hq - High Quality
-  - maxres - Maximum Resolution
-
-Made by @FayasNoushad"""
-
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('⚙ Join Updates Channel ⚙', url='https://telegram.me/FayasNoushad')]])
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('🌷 Join Updates Channel', url='https://t.me/Altex_Updates')]])
 
 Bot = Client(
     "YouTube-Thumbnail-Downloader",
@@ -44,7 +31,7 @@ async def start(bot, update):
 @Bot.on_message(filters.private & filters.text)
 async def send_thumbnail(bot, update):
     message = await update.reply_text(
-        text="`Analysing...`",
+        text="Analysing...",
         disable_web_page_preview=True,
         quote=True
     )
